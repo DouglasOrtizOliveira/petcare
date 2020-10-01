@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mypetcare/screens/cadastrar-pet.dart';
+import 'package:mypetcare/screens/login/login_screen.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -19,12 +21,16 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.home),
               title: Text('Inicio'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);},
             ),
             ListTile(
               leading: Icon(Icons.add),
               title: Text('Cadastrar Pet'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context) => CadastrarPet()),);
+              },
             ),
             ListTile(
               leading: Icon(Icons.local_hospital),
@@ -48,7 +54,7 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(Icons.exit_to_app),
               title: Text('Sair'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context,  MaterialPageRoute(builder: (context) => LoginScreen()),);
               },
             ),
           ],
